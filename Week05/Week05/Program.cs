@@ -6,8 +6,14 @@ public class TryCatch
         int value = 800000000;
         checked // check for overflow
         {
-            int square = value * value;
-            Console.WriteLine("{0} ^ 2 = {1}", value, square);
+            try
+            {
+                int square = value * value;
+            }
+            catch
+            {
+                Console.WriteLine("{0} ^ 2 = {1}", value,value);
+            }
         }
     }
 }
