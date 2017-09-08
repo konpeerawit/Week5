@@ -12,9 +12,11 @@ public class TryCatch
             }
             catch
             {
-                Console.WriteLine("{0} ^ 2 = {1}", value,value);
+                Console.WriteLine("{0} ^ 2 = {1},", value,value);
             }
         }
     }
 }
+
+
 
