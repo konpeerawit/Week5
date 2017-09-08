@@ -1,21 +1,14 @@
 ﻿using System;
-
-namespace Week05
+public class TryCatch
 {
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
+        int value = 800000000;
+        checked // check for overflow
         {
-            object o2 = null;
-            try
-            {
-                int i2 = (int)o2;
-                Console.WriteLine("i2 = {0}", i2);
-            }
-            catch
-            {
-                Console.WriteLine("Error, null object assignment.");
-            }
+            int square = value * value;
+            Console.WriteLine("{0} ^ 2 = {1}", value, square);
         }
     }
 }
+
