@@ -1,24 +1,37 @@
-﻿using System;
-public class TryCatch
+﻿
+using System;
+using System.IO;
+public class ExceptionLearning
 {
-    static void Main(string[] args)
+    public static void Main()
     {
-        int value = 800000000;
-        checked // check for overflow
+        int a = 10;
+        int b = 20;
+        int c;
+        try
         {
-            
-            {
-                int square = value * value;
-                Console.WriteLine("{0} ^ 2 = {1},", value, value);
-                Console.ReadLine();
-            }
-           
-            
-                
-            
+            c = div(a, b);
+        }
+        catch (DivideByZeroException e)
+        {
+
+            Console.WriteLine("DivideByZeroException");
+            Console.WriteLine(e.Message);
+        }
+        catch (NullReferenceException e)
+        {
+            Console.WriteLine("NullReferenceException");
+            Console.WriteLine(e.Message);
+
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Exception");
+            Console.WriteLine(e.Message);
         }
     }
+    private static int div(int a, int b)
+    {
+        throw new FormatException();
+    }
 }
-
-
-
