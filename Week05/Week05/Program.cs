@@ -1,37 +1,44 @@
-﻿
-using System;
-using System.IO;
-public class ExceptionLearning
+﻿using System;
+
+namespace ConsoleApp2
 {
-    public static void Main()
+    class ForEachTest
     {
-        int a = 10;
-        int b = 20;
-        int c;
-        try
+        static void Main(string[] args)
         {
-            c = div(a, b);
-        }
-        catch (DivideByZeroException e)
-        {
+            // Initial string array with month names.
+            string[] monthName = new string[] { "January","February",
+                         "March","April","May","June","July","August",
+                         "September","October","November","December"};
 
-            Console.WriteLine("DivideByZeroException");
-            Console.WriteLine(e.Message);
-        }
-        catch (NullReferenceException e)
-        {
-            Console.WriteLine("NullReferenceException");
-            Console.WriteLine(e.Message);
+            Console.WriteLine("-------- foreach,in loop");
+            foreach (string month in monthName)
+            {
+                System.Console.WriteLine(month);
+            }
+            System.Console.WriteLine();
 
+            // Compare the previous loop to a similar for loop.
+            Console.WriteLine("-------- for loop");
+            for (int i = 0; i < monthName.Length; i++)
+            {
+                System.Console.WriteLine(monthName[i]);
+            }
+            System.Console.WriteLine();
+
+
+            // You can maintain a count of the elements in the collection.
+            int count = 0;
+            foreach (string month in monthName)
+            {
+                count += 1;
+                System.Console.WriteLine("Element #{0}: {1}", count, month);
+            }
+            System.Console.WriteLine("Number of elements in the array: {0}", count);
+
+            // Keep the console open in debug mode.
+            Console.WriteLine("Press any key to exit.");
+            Console.ReadKey();
         }
-        catch (Exception e)
-        {
-            Console.WriteLine("Exception");
-            Console.WriteLine(e.Message);
-        }
-    }
-    private static int div(int a, int b)
-    {
-        throw new FormatException();
     }
 }
